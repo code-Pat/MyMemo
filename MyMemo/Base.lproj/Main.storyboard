@@ -28,7 +28,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Gaj-Ye-zMs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cmf-Ne-IzQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="homeNC" automaticallyAdjustsScrollViewInsets="NO" id="cmf-Ne-IzQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="leD-tu-MuO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -66,10 +66,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4d9-wS-uEd">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4d9-wS-uEd">
                                 <rect key="frame" x="0.0" y="44" width="414" height="687"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vjA-3L-Bsv">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vjA-3L-Bsv">
                                     <size key="itemSize" width="414" height="670"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -77,31 +77,40 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="onboardingCollectionViewCell" id="TDV-hW-E9U" customClass="OnboardingCollectionViewCell" customModule="MyMemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="670"/>
+                                        <rect key="frame" x="0.0" y="8.5" width="414" height="670"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="okx-6A-ZjH">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="670"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9lP-ja-oR5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="573.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="569.5"/>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Amo-H3-8Fj">
-                                                    <rect key="frame" x="16" y="573.5" width="382" height="80.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Amo-H3-8Fj">
+                                                    <rect key="frame" x="16" y="569.5" width="382" height="80.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Sentence" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMu-lW-Pcz">
-                                                            <rect key="frame" x="66" y="0.0" width="250" height="36"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Sentence" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbm-ne-i0X">
-                                                            <rect key="frame" x="120.5" y="54" width="141.5" height="26.5"/>
+                                                            <rect key="frame" x="0.0" y="54" width="382" height="26.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Hbm-ne-i0X" firstAttribute="top" secondItem="EMu-lW-Pcz" secondAttribute="bottom" constant="18" id="64X-lw-5Je"/>
+                                                        <constraint firstItem="EMu-lW-Pcz" firstAttribute="top" secondItem="Amo-H3-8Fj" secondAttribute="top" id="9mG-BN-Z4N"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Hbm-ne-i0X" secondAttribute="trailing" id="Okn-Nd-BH7"/>
+                                                        <constraint firstItem="Hbm-ne-i0X" firstAttribute="leading" secondItem="Amo-H3-8Fj" secondAttribute="leading" id="cTk-hI-Yw2"/>
+                                                        <constraint firstItem="EMu-lW-Pcz" firstAttribute="leading" secondItem="Amo-H3-8Fj" secondAttribute="leading" id="frR-nu-JNq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Hbm-ne-i0X" secondAttribute="bottom" id="lgo-zK-OSf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="EMu-lW-Pcz" secondAttribute="trailing" id="pZi-zb-MU6"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -109,8 +118,8 @@
                                                 <constraint firstItem="Amo-H3-8Fj" firstAttribute="top" secondItem="9lP-ja-oR5" secondAttribute="bottom" id="7AR-IL-WVD"/>
                                                 <constraint firstAttribute="trailing" secondItem="9lP-ja-oR5" secondAttribute="trailing" id="Jsk-eZ-P2u"/>
                                                 <constraint firstItem="9lP-ja-oR5" firstAttribute="leading" secondItem="okx-6A-ZjH" secondAttribute="leading" id="Vq1-ny-xoj"/>
-                                                <constraint firstAttribute="bottom" secondItem="Amo-H3-8Fj" secondAttribute="bottom" constant="16" id="dUT-yg-uk3"/>
                                                 <constraint firstItem="Amo-H3-8Fj" firstAttribute="top" secondItem="9lP-ja-oR5" secondAttribute="bottom" id="e7w-Tp-TyM"/>
+                                                <constraint firstAttribute="bottom" secondItem="Amo-H3-8Fj" secondAttribute="bottom" constant="20" id="hkT-Ti-fYt"/>
                                                 <constraint firstItem="Amo-H3-8Fj" firstAttribute="leading" secondItem="okx-6A-ZjH" secondAttribute="leading" constant="16" id="jU2-4y-wtw"/>
                                                 <constraint firstAttribute="trailing" secondItem="Amo-H3-8Fj" secondAttribute="trailing" constant="16" id="yWP-rB-kDj"/>
                                             </constraints>
@@ -144,7 +153,7 @@
                                     <action selector="nextButtonClicked:" destination="HLh-Dz-cwU" eventType="touchUpInside" id="l6E-St-yqC"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="v1H-w4-tOL">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="v1H-w4-tOL">
                                 <rect key="frame" x="129.5" y="731" width="155.5" height="26"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray2Color"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
