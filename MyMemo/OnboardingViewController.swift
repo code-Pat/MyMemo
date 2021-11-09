@@ -5,6 +5,14 @@
 //  Created by Donggeun Lee on 2021/11/09.
 //
 
+/*
+ What to fix :
+ - UI 조금 더 이쁘게 만들기...
+ - get started 버튼이 활성화 됐다가 다시 전 페이지로 돌아가면 버튼색이 주황색으로 남아있음 -> make it back to grey
+ - 이미지 스샷찍어서 업뎃해주기
+ - get started 에서 페이지 넘어가는 애니메이션 더 나은거 찾아보기
+ */
+
 import UIKit
 
 class OnboardingViewController: UIViewController {
@@ -15,6 +23,18 @@ class OnboardingViewController: UIViewController {
     
     var slides: [OnboardingSlide] = []
     
+    var currentPage = 0 {
+        didSet {
+            pageControl.currentPage = currentPage
+            if currentPage == slides.count - 1 {
+                nextButton.setTitle("Get Started", for: .normal)
+                nextButton.backgroundColor = .orange
+            } else {
+                nextButton.setTitle("Next", for: .normal)
+            }
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,13 +50,20 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func nextButtonClicked(_ sender: UIButton) {
-        
+        if currentPage == slides.count - 1 {
+            let controller = storyboard?.instantiateViewController(withIdentifier: "homeNC") as! UINavigationController
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .flipHorizontal
+            present(controller, animated: true, completion: nil)
+        } else {
+            currentPage += 1
+            let indexPath = IndexPath(item: currentPage, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
     }
-    
-
 }
 
-extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return slides.count
@@ -47,6 +74,15 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.setup(slides[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        currentPage = Int(scrollView.contentOffset.x / width)
     }
     
 }
