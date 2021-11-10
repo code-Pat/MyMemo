@@ -226,6 +226,9 @@
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 </button>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="jGx-2p-slo" id="spS-T0-a3h"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="square.and.arrow.up" catalog="system" style="plain" id="N5Q-Qk-8jp">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="xkk-E2-GD8">
