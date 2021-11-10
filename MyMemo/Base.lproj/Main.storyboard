@@ -131,6 +131,7 @@
                         <outlet property="count2Label" destination="5YK-HF-hZO" id="6yq-Sn-ZTo"/>
                         <outlet property="countLabel" destination="Mlt-yb-ZUG" id="Waz-Cv-Wja"/>
                         <outlet property="searchBar" destination="EhL-1e-Gcy" id="tww-q9-c76"/>
+                        <outlet property="tableView" destination="hti-kR-XiT" id="DTt-d6-tCi"/>
                         <outlet property="topView" destination="Xza-UT-VmN" id="kZ7-Qn-5zI"/>
                     </connections>
                 </viewController>
