@@ -28,6 +28,12 @@ class HomeViewController: UIViewController {
 
         items = localRealm.objects(MemoData.self)
         
+        countLabel.text = String(items.count)
+        countLabel.textAlignment = .center
+        
+        count2Label.text = "개의 메모"
+        count2Label.textAlignment = .left
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
