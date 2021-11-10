@@ -10,7 +10,7 @@
  - UI 조금 더 이쁘게 만들기...
  - get started 버튼이 활성화 됐다가 다시 전 페이지로 돌아가면 버튼색이 주황색으로 남아있음 -> make it back to grey
  - 이미지 스샷찍어서 업뎃해주기
- - get started 에서 페이지 넘어가는 애니메이션 더 나은거 찾아보기
+ - 사용자가 앱을 최초 실행시에만 onboarding 화면이 뜨게 하기... -> 아마 UserDefaults 활용?
  */
 
 import UIKit
