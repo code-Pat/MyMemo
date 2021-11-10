@@ -5,6 +5,17 @@
 //  Created by Donggeun Lee on 2021/11/09.
 //
 
+/*
+ What to do:
+ - 핀 스와이프 고정 기능 만들기
+ - 폰트 이쁘게 정리하기
+ - 레이블 스페이싱 다시 정렬해보기
+ - 서치바 설정하기
+ - tableview 섹션 나누기
+ - tableviewcell 명암, 프레임 이쁘게 하기
+ - 스토리보드 각각 분리시키기
+ */
+
 import UIKit
 import RealmSwift
 
