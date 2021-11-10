@@ -21,6 +21,7 @@
 		6B1BA292273AAB6B00C9ED34 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BA291273AAB6A00C9ED34 /* OnboardingSlide.swift */; };
 		6B1BA294273AAD0100C9ED34 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BA293273AAD0100C9ED34 /* OnboardingCollectionViewCell.swift */; };
 		6B1BA296273B9CFB00C9ED34 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BA295273B9CFB00C9ED34 /* HomeTableViewCell.swift */; };
+		6B1BA298273BA9EE00C9ED34 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1BA297273BA9EE00C9ED34 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		6B1BA291273AAB6A00C9ED34 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		6B1BA293273AAD0100C9ED34 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		6B1BA295273B9CFB00C9ED34 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		6B1BA297273BA9EE00C9ED34 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				6B1BA28F273AA8D400C9ED34 /* UIView+Extension.swift */,
 				6B1BA28B273A96B800C9ED34 /* EditViewController.swift */,
 				6B1BA289273A964E00C9ED34 /* HomeViewController.swift */,
+				6B1BA297273BA9EE00C9ED34 /* DataManager.swift */,
 				6B1BA295273B9CFB00C9ED34 /* HomeTableViewCell.swift */,
 				6B1BA279273A3F6100C9ED34 /* Assets.xcassets */,
 				6B1BA27B273A3F6100C9ED34 /* LaunchScreen.storyboard */,
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B1BA292273AAB6B00C9ED34 /* OnboardingSlide.swift in Sources */,
+				6B1BA298273BA9EE00C9ED34 /* DataManager.swift in Sources */,
 				6B1BA290273AA8D400C9ED34 /* UIView+Extension.swift in Sources */,
 				6B1BA28C273A96B800C9ED34 /* EditViewController.swift in Sources */,
 				6B1BA294273AAD0100C9ED34 /* OnboardingCollectionViewCell.swift in Sources */,
