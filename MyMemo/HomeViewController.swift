@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var count2Label: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var composeButton: UIButton!
     
     var items: Results<MemoData>!
     
@@ -51,6 +52,11 @@ class HomeViewController: UIViewController {
         tableView.reloadData()
     }
 
+    @IBAction func composeBtnClicked(_ sender: UIButton) {
+        guard let editVC = self.storyboard?.instantiateViewController(withIdentifier: "editVC") as? EditViewController else { return }
+        self.navigationController?.pushViewController(editVC, animated: true)
+    }
+    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
