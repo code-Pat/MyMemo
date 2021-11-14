@@ -23,9 +23,11 @@ class EditViewController: UIViewController {
         super.viewDidLoad()
         
         items = localRealm.objects(MemoData.self)
-
+        
+        textView.becomeFirstResponder()
 
     }
+    
     @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
         if textView.text.isEmpty {
             saveButton.isEnabled = false
@@ -37,6 +39,7 @@ class EditViewController: UIViewController {
                 localRealm.add(object)
             }
         }
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func shareButtonClicked(_ sender: UIBarButtonItem) {
