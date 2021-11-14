@@ -11,14 +11,17 @@ import RealmSwift
 class MemoData: Object {
     @Persisted var title: String
     @Persisted var content: String
-    @Persisted var date = Date()
+    @Persisted var date: Date
+    @Persisted var isPinned: Bool
     
     @Persisted(primaryKey: true) var _id: ObjectId
     
-    convenience init(title: String, content: String) {
+    convenience init(title: String, content: String, date: Date) {
         self.init()
+        
         self.title = title
         self.content = content
-        self.date = Date()
+        self.date = date
+        self.isPinned = false
     }
 }
