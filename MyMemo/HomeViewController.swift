@@ -20,7 +20,7 @@ import UIKit
 import RealmSwift
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var count2Label: UILabel!
@@ -29,18 +29,28 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var composeButton: UIButton!
     
     var items: Results<MemoData>!
+    var memoCount = 0
+    var pinnedItems: Results<MemoData>!
+    var unpinnedItems: Results<MemoData>!
+    var searchedItems: Results<MemoData>!
     
     let localRealm = try! Realm()
     
+    var searchC: UISearchController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        view.backgroundColor = .black
         
         tableView.delegate = self
         tableView.dataSource = self
 
         items = localRealm.objects(MemoData.self)
+        pinnedItems = localRealm.objects(MemoData.self).filter("isPinned == true")
+        unpinnedItems = localRealm.objects(MemoData.self).filter("isPinned == false")
         
-        countLabel.text = String(items.count)
+        countLabel.text = String(memoCount)
         countLabel.textAlignment = .center
         
         count2Label.text = "개의 메모"
@@ -49,6 +59,8 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        memoCount = items.count
         tableView.reloadData()
     }
 
@@ -57,16 +69,24 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(editVC, animated: true)
     }
     
+    func isSearching() -> Bool {
+        return searchC.isActive
+    }
+    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 10
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        if isSearching() {
+            return searchedItems.count
+        } else {
+            return section == 0 ? pinnedItems.count : unpinnedItems.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,10 +95,28 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let row = items[indexPath.row]
+        //let row = items[indexPath.row]
+        //let currentDate = Calendar.current.dateComponents([.weekOfYear, .day], from: Date())
         
-        cell.contentLabel.text = row.title
-        cell.detailLabel.text = row.content
+        if isSearching() {
+            let row = searchedItems[indexPath.row]
+            
+            cell.contentLabel.text = row.title
+            cell.detailLabel.text = row.content
+            
+        } else {
+            if indexPath.section == 0 {
+                let row = pinnedItems[indexPath.row]
+                
+                cell.contentLabel.text = row.title
+                cell.detailLabel.text = row.content
+                
+            } else {
+                let row = unpinnedItems[indexPath.row]
+                cell.contentLabel.text = row.title
+                cell.detailLabel.text = row.content
+            }
+        }
         
         return cell
     }
