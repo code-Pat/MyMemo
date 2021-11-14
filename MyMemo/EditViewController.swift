@@ -30,11 +30,24 @@ class EditViewController: UIViewController {
         if textView.text.isEmpty {
             saveButton.isEnabled = false
         } else {
-            
+            let title = "title"
+            let texts = String(textView.text)
+            let object = self.makeMemoData(title, texts)
+            try! localRealm.write {
+                localRealm.add(object)
+            }
         }
     }
     
     @IBAction func shareButtonClicked(_ sender: UIBarButtonItem) {
+    }
+    
+    func makeMemoData(_ title: String, _ content: String) -> MemoData {
+        let memodata = MemoData()
+        memodata.title = title
+        memodata.content = content
+        
+        return memodata
     }
     
 }
