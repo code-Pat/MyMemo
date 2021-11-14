@@ -34,5 +34,7 @@ class EditViewController: UIViewController {
         }
     }
     
-
+    @IBAction func shareButtonClicked(_ sender: UIBarButtonItem) {
+    }
+    
 }
