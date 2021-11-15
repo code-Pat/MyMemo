@@ -22,6 +22,6 @@ class MemoData: Object {
         self.title = title
         self.content = content
         self.date = date
-        self.isPinned = false
+        //self.isPinned = false
     }
 }

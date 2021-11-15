@@ -68,25 +68,7 @@
                                 <view key="tableFooterView" contentMode="scaleToFill" id="ITg-Qu-fO7">
                                     <rect key="frame" x="0.0" y="301.5" width="414" height="60"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="US3-kd-zEr">
-                                            <rect key="frame" x="354" y="15" width="45" height="45"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="45" id="hXD-wU-IxA"/>
-                                                <constraint firstAttribute="height" constant="45" id="w8t-9B-BWt"/>
-                                            </constraints>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
-                                            <connections>
-                                                <action selector="composeBtnClicked:" destination="qgB-Q4-4bU" eventType="touchUpInside" id="Tm7-tt-8aV"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="US3-kd-zEr" secondAttribute="trailing" constant="15" id="7d0-uB-aS8"/>
-                                        <constraint firstItem="US3-kd-zEr" firstAttribute="top" secondItem="ITg-Qu-fO7" secondAttribute="top" constant="15" id="C8N-mQ-37a"/>
-                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeTableViewCell" rowHeight="100" id="eJg-CX-ySe" customClass="HomeTableViewCell" customModule="MyMemo" customModuleProvider="target">
@@ -161,13 +143,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="US3-kd-zEr">
+                                <rect key="frame" x="354" y="802" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="hXD-wU-IxA"/>
+                                    <constraint firstAttribute="height" constant="45" id="w8t-9B-BWt"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
+                                <connections>
+                                    <action selector="composeBtnClicked:" destination="qgB-Q4-4bU" eventType="touchUpInside" id="Tm7-tt-8aV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8nE-g6-bNw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hti-kR-XiT" firstAttribute="top" secondItem="8nE-g6-bNw" secondAttribute="top" id="3vc-jT-0qe"/>
                             <constraint firstItem="hti-kR-XiT" firstAttribute="leading" secondItem="8nE-g6-bNw" secondAttribute="leading" id="HpE-QZ-DG7"/>
+                            <constraint firstItem="8nE-g6-bNw" firstAttribute="bottom" secondItem="US3-kd-zEr" secondAttribute="bottom" constant="15" id="jkz-hU-zRc"/>
                             <constraint firstItem="8nE-g6-bNw" firstAttribute="bottom" secondItem="hti-kR-XiT" secondAttribute="bottom" id="lGR-IM-5mQ"/>
+                            <constraint firstItem="8nE-g6-bNw" firstAttribute="trailing" secondItem="US3-kd-zEr" secondAttribute="trailing" constant="15" id="w1i-gN-KU3"/>
                             <constraint firstItem="8nE-g6-bNw" firstAttribute="trailing" secondItem="hti-kR-XiT" secondAttribute="trailing" id="x4f-Xl-0Ha"/>
                         </constraints>
                     </view>

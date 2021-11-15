@@ -76,23 +76,63 @@
 		6B1BA26F273A3F5D00C9ED34 /* MyMemo */ = {
 			isa = PBXGroup;
 			children = (
+				6B7739E627412AF30048B511 /* Storyboard */,
+				6B7739E527412AE40048B511 /* Extension */,
+				6B7739E427412AD20048B511 /* Cell */,
+				6B7739E327412AAB0048B511 /* ViewController */,
+				6B7739E227412AA00048B511 /* Model */,
 				6B1BA270273A3F5D00C9ED34 /* AppDelegate.swift */,
 				6B1BA272273A3F5D00C9ED34 /* SceneDelegate.swift */,
-				6B1BA276273A3F5D00C9ED34 /* Main.storyboard */,
-				6B1BA293273AAD0100C9ED34 /* OnboardingCollectionViewCell.swift */,
-				6B1BA291273AAB6A00C9ED34 /* OnboardingSlide.swift */,
-				6B1BA28D273A998600C9ED34 /* OnboardingViewController.swift */,
-				6B1BA28F273AA8D400C9ED34 /* UIView+Extension.swift */,
-				6B1BA28B273A96B800C9ED34 /* EditViewController.swift */,
-				6B1BA289273A964E00C9ED34 /* HomeViewController.swift */,
-				6B7739E02740FEF50048B511 /* SearchViewController.swift */,
-				6B1BA297273BA9EE00C9ED34 /* DataManager.swift */,
-				6B1BA295273B9CFB00C9ED34 /* HomeTableViewCell.swift */,
 				6B1BA279273A3F6100C9ED34 /* Assets.xcassets */,
 				6B1BA27B273A3F6100C9ED34 /* LaunchScreen.storyboard */,
 				6B1BA27E273A3F6100C9ED34 /* Info.plist */,
 			);
 			path = MyMemo;
+			sourceTree = "<group>";
+		};
+		6B7739E227412AA00048B511 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B1BA291273AAB6A00C9ED34 /* OnboardingSlide.swift */,
+				6B1BA297273BA9EE00C9ED34 /* DataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B7739E327412AAB0048B511 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6B1BA28D273A998600C9ED34 /* OnboardingViewController.swift */,
+				6B1BA289273A964E00C9ED34 /* HomeViewController.swift */,
+				6B7739E02740FEF50048B511 /* SearchViewController.swift */,
+				6B1BA28B273A96B800C9ED34 /* EditViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6B7739E427412AD20048B511 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6B1BA293273AAD0100C9ED34 /* OnboardingCollectionViewCell.swift */,
+				6B1BA295273B9CFB00C9ED34 /* HomeTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6B7739E527412AE40048B511 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6B1BA28F273AA8D400C9ED34 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6B7739E627412AF30048B511 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				6B1BA276273A3F5D00C9ED34 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
